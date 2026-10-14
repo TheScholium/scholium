@@ -166,7 +166,7 @@ def month(n):
         L.append(f"<line x1=0 y1={y:.1f} x2={Wt} y2={y:.1f} stroke='#c4c4c4' stroke-width=1.3 />")
         L.append(f"<text x={dc/2} y={y-rh/2+8:.1f} text-anchor=middle font-family=CG font-size=24 fill='#666'>{i+1}</text>")
     yb=Hh+n*rh
-    for x in xs[1:-1]: L.append(f"<line x1={x} y1={Hh} x2={x} y2={Ht} stroke='#d0d0d0' stroke-width=1.3 />")
+    for x in xs[1:-1]: L.append(f"<line x1={x} y1={Hh} x2={x} y2={Ht} stroke='#8c8c8c' stroke-width=1.8 />")
     for x in (xs[0],xe): L.append(f"<line x1={x} y1={Hh} x2={x} y2={Ht} stroke='#8a8a8a' stroke-width=1.5 />")
     L.append(f"<line x1=0 y1={yb:.1f} x2={Wt} y2={yb:.1f} stroke='#222' stroke-width=2 />")
     L.append(f"<line x1=0 y1={Ht-1} x2={Wt} y2={Ht-1} stroke='#b4b4b4' stroke-width=1.3 />")
