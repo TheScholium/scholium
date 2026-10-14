@@ -30,6 +30,7 @@ It reads math the way people write it: `2x`, `sin x cos x`, `sin^2 x`, `(x+1)(x-
 
 The details are fussy on purpose:
 
+- **Auto zoom.** The window follows what you type: it finds the zeros, turning points, inflection points, poles and crossings, and frames them. A periodic curve gets about two periods. A circle stays round. Type into a window field, or tap a preset, and auto zoom stops until you turn it back on.
 - **Asymptotes stay open.** `tan x` and `1/x` don't get the fake vertical lines most graphing tools draw.
 - **π on the axis** when the graph is a trig function: `π/2`, `π`, `3π/2`, not 1.57.
 - **Equal scale** makes circles round.
@@ -70,6 +71,7 @@ Everything is plain TypeScript in [`src/core`](src/core), with no device code in
 
 - **[`expr.ts`](src/core/expr.ts)** is a parser for written math. No `eval`: it builds functions out of a small grammar with implicit multiplication, bracketless function arguments (`sin 2x` is `sin(2x)` but `sin x cos x` is a product) and a minus sign that binds looser than powers (`-x^2` is `-(x^2)`).
 - **[`sample.ts`](src/core/sample.ts)** samples curves adaptively: it keeps splitting an interval until the curve is within a third of a pixel of a straight line. A jump that never gets smaller is a discontinuity, and the pen lifts there. Then it clips to the box and throws away every point that doesn't change the picture, because each point is something the tablet has to store.
+- **[`zoom.ts`](src/core/zoom.ts)** is the auto zoom. It scans [-60, 60] for features of each curve. A big step between samples counts as a pole only if it does not shrink when the interval is halved forty times, so `e^x` is steep, not broken.
 - **[`implicit.ts`](src/core/implicit.ts)** draws `F(x, y) = 0` with marching squares. Each crossing is found by bisection on the real function, so circles stay round on a coarse grid, and a sign change with a huge value next to it is a pole, not a curve.
 - **[`font.ts`](src/core/font.ts)** is the single-line font for the numbers. Where a letter can be drawn in one stroke by going back over a line it already drew (the stem of a 4, the bar of a t), it is, because each stroke is one call to the tablet.
 - **[`plan.ts`](src/core/plan.ts)** turns the figure into Supernote geometry calls. The grid is a single zigzag stroke and each axis with all its tick marks is one stroke, so a whole graph is usually 40 to 100 calls.
