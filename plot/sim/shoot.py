@@ -41,7 +41,6 @@ async def main():
         await pg.get_by_text('Graph', exact=True).first.click()
         await pg.get_by_text('Read my handwriting').click()
         await pg.wait_for_timeout(300)
-        await pg.get_by_text('±5', exact=True).click()
         await pg.get_by_text('Key points', exact=False).click()
         await pg.wait_for_timeout(300)
         await pg.screenshot(path=f'{OUT}/sim-5-lasso.png')

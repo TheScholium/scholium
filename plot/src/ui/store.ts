@@ -14,6 +14,8 @@ export interface Settings {
   tab: 'graph' | 'stencils';
   /** Text of each field, as typed. Numbers are parsed when drawing. */
   lines: string[];
+  /** Auto zoom: the window follows the equations until you type one. */
+  auto: boolean;
   x0: string; x1: string; y0: string; y1: string; t0: string; t1: string;
   opts: Omit<PlotOpts, 'lines' | 'x' | 'y' | 't'>;
   tangent: string; areaA: string; areaB: string; riemannN: string; riemannRule: 'left' | 'mid' | 'right';
@@ -30,6 +32,7 @@ export interface Settings {
 export const settings: Settings = {
   tab: 'graph',
   lines: ['y = sin x', '', ''],
+  auto: true,
   x0: '-2π', x1: '2π', y0: '-2', y1: '2', t0: '0', t1: '2π',
   opts: { ...DEFAULTS },
   tangent: '1', areaA: '0', areaB: 'π', riemannN: '6', riemannRule: 'mid',

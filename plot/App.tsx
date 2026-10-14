@@ -3,11 +3,13 @@
  */
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Modal, Pressable, ScrollView, StatusBar, StyleSheet, Text, TextInput, useWindowDimensions, View } from 'react-native';
-import { plot, autoY, parseLines, PlotOpts, PlotResult } from './src/core/figure';
+import { plot, parseLines, PlotOpts, PlotResult } from './src/core/figure';
 import { evalNumber } from './src/core/expr';
 import { STENCILS, drawStencil } from './src/core/stencils';
 import { plan, placeFigure, opsBounds, WIDTHS } from './src/core/plan';
 import { cleanRecognized } from './src/core/recog';
+import { autoWindow } from './src/core/zoom';
+import { piLabel } from './src/core/ticks';
 import type { Drawing, Rect } from './src/core/types';
 import { Preview } from './src/ui/Preview';
 import { Keypad, MathField, applyKey, KeyAction } from './src/ui/Keypad';
@@ -78,6 +80,7 @@ export default function App(): React.JSX.Element {
   const onKey = (k: KeyAction) => {
     if (!focus) return;
     if ('act' in k && k.act === 'abc') { setAbc(getField(focus)); return; }
+    if (['x0', 'x1', 'y0', 'y1'].includes(focus)) S.auto = false; // typing a window turns auto zoom off
     const r = applyKey(getField(focus), cursor, k);
     setField(focus, r.text);
     setCursor(r.cursor);
@@ -87,6 +90,17 @@ export default function App(): React.JSX.Element {
 
   /* ---------- the figure ---------- */
   const pageSize = page ?? { width: 1404, height: 1872, isNote: true, path: '', page: 0 };
+  // Auto zoom: while it is on, the window follows the equations.
+  const autoWin = useMemo(
+    () => (S.auto && S.tab === 'graph' ? autoWindow(S.lines, [num(S.t0) ?? 0, num(S.t1) ?? 2 * Math.PI], 4 / 3) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [S.auto, S.tab, JSON.stringify(S.lines), S.t0, S.t1],
+  );
+  if (autoWin) {
+    const px = (v: number) => (autoWin.pi ? piLabel(Math.round(v / (Math.PI / 2)), 2) : fmtNum(v));
+    S.x0 = px(autoWin.x[0]); S.x1 = px(autoWin.x[1]);
+    S.y0 = fmtNum(autoWin.y[0]); S.y1 = fmtNum(autoWin.y[1]);
+  }
   const numbers = { x0: num(S.x0), x1: num(S.x1), y0: num(S.y0), y1: num(S.y1), t0: num(S.t0), t1: num(S.t1) };
   const stencil = STENCILS.find((x) => x.id === S.stencil) ?? STENCILS[0];
   const aspect = S.tab === 'stencils'
@@ -152,12 +166,6 @@ export default function App(): React.JSX.Element {
     force();
   };
 
-  const autoFitY = () => {
-    const { x0, x1 } = numbers;
-    if (x0 === null || x1 === null) return;
-    const y = autoY(S.lines, x0, x1);
-    if (y) set({ y0: fmtNum(y[0]), y1: fmtNum(y[1]) });
-  };
 
   /* ---------- layout ---------- */
   const pad = Math.round(winW * 0.035);
@@ -206,7 +214,7 @@ export default function App(): React.JSX.Element {
             <Row label="Window">
               <Text style={st.wl}>x</Text>{field('x0', 'min', true, numbers.x0 === null, st.num)}<Text style={st.wl}>to</Text>{field('x1', 'max', true, numbers.x1 === null, st.num)}
               <Text style={st.wl}>y</Text>{field('y0', 'min', true, numbers.y0 === null, st.num)}<Text style={st.wl}>to</Text>{field('y1', 'max', true, numbers.y1 === null, st.num)}
-              <Chip label="Fit y" onPress={autoFitY} />
+              <Chip label={S.auto ? '■ Auto' : '□ Auto'} on={false} onPress={() => set({ auto: !S.auto })} />
             </Row>
             {needsT && (
               <Row label="t, θ from">
@@ -214,7 +222,7 @@ export default function App(): React.JSX.Element {
               </Row>
             )}
             <Row label="Presets">
-              {PRESETS.map((p) => <Chip key={p.label} label={p.label} onPress={() => set({ x0: p.x[0], x1: p.x[1], y0: p.y[0], y1: p.y[1] })} />)}
+              {PRESETS.map((p) => <Chip key={p.label} label={p.label} onPress={() => set({ auto: false, x0: p.x[0], x1: p.x[1], y0: p.y[0], y1: p.y[1] })} />)}
             </Row>
           </>
         ) : (
