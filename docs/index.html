@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Scholium</title>
+<meta name="description" content="Open-source study tools from a math and physics undergraduate: e-ink templates, an Obsidian theme, and the code that builds them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12100e;--bg2:#1b1814;--rule:#2a251d;--text:#d6ccb4;--bright:#ebe1c8;--muted:#948b76;--gold:#c4a24d;--golddim:#8f7639}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'EB Garamond',Palatino,Georgia,serif;font-size:19px;line-height:1.65;
+ background-image:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(196,162,77,.06),transparent 70%)}
+main{max-width:1060px;margin:0 auto;padding:72px 24px 56px}
+header{text-align:center;margin-bottom:56px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(46px,8vw,76px);line-height:1.05;color:var(--bright)}
+h1 i{color:var(--gold)}
+.tag{font-style:italic;color:var(--muted);font-size:21px;margin-top:10px}
+.lede{max-width:640px;margin:28px auto 0}
+.dia{display:flex;align-items:center;gap:14px;max-width:420px;margin:34px auto}
+.dia::before,.dia::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--golddim) 30%,var(--golddim) 70%,transparent)}
+.dia i{width:7px;height:7px;border:1px solid var(--golddim);transform:rotate(45deg)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-style:italic;font-size:34px;color:var(--gold);margin:0 0 8px}
+h2::before{content:'\2726';font-style:normal;font-size:.5em;color:var(--golddim);margin-right:.55em;vertical-align:.25em}
+section{margin-top:60px}
+p.sub{color:var(--muted);margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media (max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
+figure{background:var(--bg2);border:1px solid var(--rule);padding:10px 10px 12px}
+figure img{width:100%;display:block;background:#fff}
+figcaption{font-variant:small-caps;letter-spacing:.06em;font-size:17px;color:var(--bright);margin-top:9px}
+figcaption span{display:block;font-variant:normal;letter-spacing:0;font-size:15px;color:var(--muted);line-height:1.4;margin-top:2px}
+.btn{display:inline-block;margin-top:30px;padding:11px 26px;border:1px solid var(--golddim);color:var(--gold);text-decoration:none;font-variant:small-caps;letter-spacing:.08em;font-size:19px}
+.btn:hover{background:rgba(196,162,77,.1)}
+a{color:var(--gold)}
+ol{padding-left:1.3em}ol li{margin:.2em 0}
+table{border-collapse:collapse;width:100%;border-top:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);font-size:17px}
+td{padding:.5em .8em;border-top:1px solid var(--rule);vertical-align:top}
+td:first-child{font-variant:small-caps;letter-spacing:.05em;color:var(--bright);white-space:nowrap}
+footer{margin-top:72px;text-align:center;color:var(--muted);font-size:16px}
+footer a{color:var(--muted)}
+@media (max-width:560px){body{font-size:18px}main{padding-top:48px}.grid{grid-template-columns:repeat(2,1fr);gap:14px}td:first-child{white-space:normal}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <h1>The <i>Scholium</i></h1>
+ <p class="tag">Notes from the margin of a physics degree.</p>
+ <p class="lede">Open-source study tools from a math and physics undergraduate. A <em>scholium</em> is the note that follows a proof, the remark in the margin that explains it.</p>
+ <a class="btn" href="https://github.com/TheScholium/scholium/releases/latest">Download the templates</a>
+</header>
+<div class="dia"><i></i></div>
+
+<section>
+ <h2>Study templates</h2>
+ <p class="sub">Eleven undated pages for the Supernote Nomad and reMarkable 2, at the device&rsquo;s native 1404 &times; 1872 px.</p>
+ <div class="grid">
+  <figure><img src="img/the-blurt.png" alt="The Blurt template" loading="lazy"><figcaption>The Blurt<span>Recall from memory, then find the gaps.</span></figcaption></figure>
+  <figure><img src="img/the-time-trial.png" alt="The Time Trial template" loading="lazy"><figcaption>The Time Trial<span>Budget time per question; track five attempts.</span></figcaption></figure>
+  <figure><img src="img/the-error-log.png" alt="The Error Log template" loading="lazy"><figcaption>The Error Log<span>Each mistake, its type, the correct move.</span></figcaption></figure>
+  <figure><img src="img/the-research.png" alt="The Research template" loading="lazy"><figcaption>The Research<span>The big picture of a paper beyond your level.</span></figcaption></figure>
+  <figure><img src="img/the-exam-plan.png" alt="The Exam Plan template" loading="lazy"><figcaption>The Exam Plan<span>Topics and a three-week countdown.</span></figcaption></figure>
+  <figure><img src="img/the-class-hub.png" alt="The Class Hub template" loading="lazy"><figcaption>The Class Hub<span>One page per course.</span></figcaption></figure>
+  <figure><img src="img/the-study-week.png" alt="The Study Week template" loading="lazy"><figcaption>The Study Week<span>6 am to midnight, undated.</span></figcaption></figure>
+  <figure><img src="img/the-week.png" alt="The Week template" loading="lazy"><figcaption>The Week<span>To-do, goal, habit rings, wins.</span></figcaption></figure>
+  <figure><img src="img/the-month-31.png" alt="The Month template" loading="lazy"><figcaption>The Month<span>Nine habits; 28, 30 or 31 days.</span></figcaption></figure>
+ </div>
+</section>
+
+<section>
+ <h2>Install</h2>
+ <ol>
+  <li>Download the latest release and unzip it.</li>
+  <li>Connect the Nomad by USB, or use the Supernote Partner app.</li>
+  <li>Copy the PNG files into the <strong>MyStyle</strong> folder.</li>
+  <li>Create a note and choose the template from your custom templates.</li>
+ </ol>
+</section>
+
+<section>
+ <h2>Also here</h2>
+ <p><strong>Istari</strong>, a dark scholarly theme for Obsidian, with a companion plugin for margin sidenotes. <a href="https://github.com/TheScholium/scholium/tree/main/istari">View on GitHub</a>.</p>
+</section>
+
+<section>
+ <h2>License</h2>
+ <table>
+  <tr><td>Templates</td><td>CC BY-NC-SA 4.0. Share and adapt with credit; not for sale; adaptations under the same license.</td></tr>
+  <tr><td>Code</td><td>MIT: the build script, the theme, and the plugin.</td></tr>
+  <tr><td>Fonts</td><td>EB Garamond and Cormorant Garamond, SIL Open Font License 1.1.</td></tr>
+ </table>
+</section>
+
+<footer>
+ <div class="dia"><i></i></div>
+ <a href="https://instagram.com/the.scholium">Instagram</a> &middot;
+ <a href="https://reddit.com/u/the_scholium">Reddit</a> &middot;
+ <a href="https://pinterest.com/thescholium">Pinterest</a> &middot;
+ <a href="https://github.com/TheScholium/scholium">GitHub</a> &middot;
+ <a href="mailto:scholium.notes@gmail.com">Email</a>
+</footer>
+</main>
+</body>
+</html>
