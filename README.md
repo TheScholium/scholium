@@ -26,6 +26,12 @@ I'm a math and physics undergrad, and these are the pages I use on my Supernote 
 </tr>
 </table>
 
+## The Folio
+
+**[The Folio](https://thescholium.github.io/scholium/folio/)** puts a whole academic year in one PDF you can tap through: tabs for every month and course down the edge of every page, linked calendars, a term map, and a section for each course built from these templates. Type your course names in the [builder](https://thescholium.github.io/scholium/folio/) and they go on the tabs. [How it works →](folio/README.md)
+
+<p align="center"><a href="https://thescholium.github.io/scholium/folio/"><img src="docs/folio/preview.png" alt="Pages of the Folio planner" width="100%"></a></p>
+
 ## Putting them on your tablet
 
 **Supernote Nomad:** download the [latest release](https://github.com/TheScholium/scholium/releases/latest) and unzip it. Plug the Nomad in over USB (or use the Supernote Partner app), copy the PNG files into the **MyStyle** folder, and they'll show up as custom templates when you make a new note.
