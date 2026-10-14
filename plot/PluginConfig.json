@@ -1,0 +1,14 @@
+{
+  "name": "Scholium Plot",
+  "desc": "Graphs, slope fields, polar curves and class diagrams, drawn onto your page in real ink.",
+  "iconPath": "assets/plugin-icon.png",
+  "versionName": "0.1.0",
+  "versionCode": "1",
+  "pluginID": "ro2ubdjv1iofrfta",
+  "pluginKey": "ScholiumPlot",
+  "jsMainPath": "index",
+  "author": "The Scholium",
+  "uses-permissions": [
+    "plugin.permission.FILE:READ"
+  ]
+}

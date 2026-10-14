@@ -32,6 +32,12 @@ I'm a math and physics undergrad, and these are the pages I use on my Supernote 
 
 <p align="center"><a href="https://thescholium.github.io/scholium/folio/"><img src="docs/folio/preview.png" alt="Pages of the Folio planner" width="100%"></a></p>
 
+## Scholium Plot
+
+**[Scholium Plot](plot/README.md)** is a Supernote plugin that draws graphs onto your page in real pen strokes: functions, implicit curves, polar and parametric curves, slope fields, tangent lines and Riemann sums, plus stencils like the unit circle and an inclined plane. Write an equation by hand, lasso it, and the graph lands under it. [Try it in your browser →](https://thescholium.github.io/scholium/plot/)
+
+<p align="center"><a href="https://thescholium.github.io/scholium/plot/"><img src="docs/plot/img/banner.png" alt="Scholium Plot on a Supernote" width="100%"></a></p>
+
 ## Putting them on your tablet
 
 **Supernote Nomad:** download the [latest release](https://github.com/TheScholium/scholium/releases/latest) and unzip it. Plug the Nomad in over USB (or use the Supernote Partner app), copy the PNG files into the **MyStyle** folder, and they'll show up as custom templates when you make a new note.
