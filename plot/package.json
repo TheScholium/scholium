@@ -1,0 +1,46 @@
+{
+  "name": "ScholiumPlot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "sh test/run.sh",
+    "sim": "esbuild sim/main.tsx --bundle --outfile=build/sim/sim.js --alias:react-native=react-native-web --alias:sn-plugin-lib=./sim/mock.ts --loader:.png=dataurl --jsx=automatic --define:process.env.NODE_ENV='\"production\"' --define:__DEV__=false --minify && cp sim/index.html build/sim/"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "sn-plugin-lib": "0.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "18.0.0",
+    "@react-native-community/cli-platform-android": "18.0.0",
+    "@react-native-community/cli-platform-ios": "18.0.0",
+    "@react-native/babel-preset": "0.79.2",
+    "@react-native/eslint-config": "0.79.2",
+    "@react-native/metro-config": "0.79.2",
+    "@react-native/typescript-config": "0.79.2",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.0.0",
+    "@types/react-test-renderer": "^19.0.0",
+    "esbuild": "0.25.10",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-dom": "19.0.0",
+    "react-native-web": "0.20.0",
+    "react-test-renderer": "19.0.0",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "description": "Scholium Plot: graphs and class diagrams drawn onto Supernote pages in real ink.",
+  "license": "MIT"
+}
