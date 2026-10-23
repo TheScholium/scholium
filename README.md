@@ -26,15 +26,15 @@ I'm a math and physics undergrad, and these are the pages I use on my Supernote 
 
 ## The Folio
 
-**[The Folio](https://thescholium.github.io/scholium/folio/)** puts a whole academic year in one PDF you can tap through: tabs for every month and course down the edge of every page, linked calendars, a term map, and a section for each course built from these templates. Type your course names in the [builder](https://thescholium.github.io/scholium/folio/) and they go on the tabs. [How it works →](folio/README.md)
+**[The Folio](https://thescholium.github.io/scholium-folio/)** puts a whole academic year in one PDF you can tap through: tabs for every month and course down the edge of every page, linked calendars, a term map, and a section for each course built from these templates. Type your course names in the [builder](https://thescholium.github.io/scholium-folio/) and they go on the tabs. [How it works →](https://github.com/TheScholium/scholium-folio)
 
-<p align="center"><a href="https://thescholium.github.io/scholium/folio/"><img src="docs/folio/preview.png" alt="Pages of the Folio planner" width="100%"></a></p>
+<p align="center"><a href="https://thescholium.github.io/scholium-folio/"><img src="https://raw.githubusercontent.com/TheScholium/scholium-folio/main/docs/preview.png" alt="Pages of the Folio planner" width="100%"></a></p>
 
 ## Scholium Plot
 
-**[Scholium Plot](plot/README.md)** is a Supernote plugin that draws graphs onto your page in real pen strokes: functions, implicit curves, polar and parametric curves, slope fields, tangent lines and Riemann sums, plus stencils like the unit circle and an inclined plane. Write an equation by hand, lasso it, and the graph lands under it. [Try it in your browser →](https://thescholium.github.io/scholium/plot/)
+**[Scholium Plot](https://github.com/TheScholium/scholium-plot)** is a Supernote plugin that draws graphs onto your page in real pen strokes: functions, implicit curves, polar and parametric curves, slope fields, tangent lines and Riemann sums, plus stencils like the unit circle and an inclined plane. Write an equation by hand, lasso it, and the graph lands under it. [Try it in your browser →](https://thescholium.github.io/scholium-plot/)
 
-<p align="center"><a href="https://thescholium.github.io/scholium/plot/"><img src="docs/plot/img/banner.png" alt="Scholium Plot on a Supernote" width="100%"></a></p>
+<p align="center"><a href="https://thescholium.github.io/scholium-plot/"><img src="https://raw.githubusercontent.com/TheScholium/scholium-plot/main/docs/img/banner.png" alt="Scholium Plot on a Supernote" width="100%"></a></p>
 
 ## Why "scholium"
 
