@@ -2,7 +2,7 @@
 
 Most planner templates are made for planning brunch. These are for the other thing: closing the textbook and finding out what you actually remember, logging the same sign error until you stop making it, and sitting through a colloquium that is three courses over your head.
 
-I'm a math and physics undergrad, and these are the pages I use on my Supernote Nomad. They're free, undated, and meant to be written on hundreds of times.
+I'm a math and physics undergrad, and these are the pages I use on my Supernote Nomad. They're openly licensed, undated, and meant to be written on hundreds of times.
 
 **[Browse them on the website →](https://thescholium.github.io/scholium)**
 
@@ -43,8 +43,6 @@ I'm a math and physics undergrad, and these are the pages I use on my Supernote 
 **Supernote Nomad:** download the [latest release](https://github.com/TheScholium/scholium/releases/latest) and unzip it. Plug the Nomad in over USB (or use the Supernote Partner app), copy the PNG files into the **MyStyle** folder, and they'll show up as custom templates when you make a new note.
 
 **reMarkable 2:** same resolution (1404 × 1872), so the files fit as they are. Copy them over the way you add any custom template.
-
-Versions with room for the Nomad's toolbar are on the way.
 
 ## Why "scholium"
 
