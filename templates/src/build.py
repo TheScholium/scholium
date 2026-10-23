@@ -186,7 +186,7 @@ wins="".join("<div style='display:flex;align-items:flex-end;gap:14px;height:56px
 weekcols="".join(f"<div class=col style='flex:1;border-left:{'none' if i==0 else '1.5px solid #c4c4c4'};padding:0 12px'><div class=small style='border-bottom:1.5px solid #333;padding-bottom:4px'>{d}</div></div>" for i,d in enumerate(days))
 def week(intent):
     return doc("The <i>Week</i>", [("week of",220)], f"""
-<div style="display:flex;gap:40px;height:{900 if intent else 940}px">
+<div style="display:flex;gap:40px;height:{900 if intent else 970}px">
  <div class=col style="width:610px">{lbl("To do","due")}<div class="top col" style="padding-top:2px;flex:1">{todo(0)}</div></div>
  <div class=col style="flex:1">
   {lbl("Week goal")}<div class="ruled top" style="height:106px"></div><div style="display:flex;align-items:center;gap:14px"><span class=small style="padding-top:16px">progress</span><div style="flex:1">{prog}</div></div>{GAP(30)}
